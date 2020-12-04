@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedLoader", "FeedLoader\FeedLoader.csproj", "{CABF1B6B-E213-4C2A-8FF6-88A01E817EC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedMailer", "FeedMailer\FeedMailer.csproj", "{11F18CE0-CDA4-4758-B84B-2F342E73574A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{CABF1B6B-E213-4C2A-8FF6-88A01E817EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CABF1B6B-E213-4C2A-8FF6-88A01E817EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CABF1B6B-E213-4C2A-8FF6-88A01E817EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11F18CE0-CDA4-4758-B84B-2F342E73574A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F18CE0-CDA4-4758-B84B-2F342E73574A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F18CE0-CDA4-4758-B84B-2F342E73574A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F18CE0-CDA4-4758-B84B-2F342E73574A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
