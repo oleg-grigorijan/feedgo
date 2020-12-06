@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using System.ServiceModel.Syndication;
 using System.Xml;
 using Microsoft.Extensions.Logging;
-using System.ServiceModel.Syndication;
 
 namespace FeedLoader
 {
@@ -42,7 +40,7 @@ namespace FeedLoader
                 Description = @this.Summary.Text,
                 Categories = @this.Categories.Select(c => c.Name),
                 Link = @this.Links.First().Uri,
-                PublishedDate = @this.PublishDate,
+                PublishedDate = @this.PublishDate
             };
         }
     }

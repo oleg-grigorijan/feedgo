@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -11,8 +8,8 @@ namespace FeedLoader
     [Route("/api/feed")]
     public class FeedLoaderController : ControllerBase
     {
-        private readonly ILogger<FeedLoaderController> _logger;
         private readonly IFeedLoader _feedLoader;
+        private readonly ILogger<FeedLoaderController> _logger;
 
         public FeedLoaderController(ILogger<FeedLoaderController> logger, IFeedLoader feedLoader)
         {
