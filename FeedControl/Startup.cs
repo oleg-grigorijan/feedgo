@@ -1,3 +1,5 @@
+using FeedControl.Integration.FeedLoader;
+using FeedControl.Integration.FeedMailer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +20,12 @@ namespace FeedControl
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<FeedLoaderOptions>(Configuration.GetSection("Service:FeedLoader"));
+            services.AddSingleton<IFeedLoaderClient, FeedLoaderClient>();
+
+            services.Configure<FeedMailerOptions>(Configuration.GetSection("Service:FeedMailer"));
+            services.AddSingleton<IFeedMailerClient, FeedMailerClient>();
+
             services.AddControllersWithViews();
         }
 

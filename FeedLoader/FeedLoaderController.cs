@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 namespace FeedLoader
 {
     [ApiController]
-    [Route("/api/feed")]
+    [Route("/feed")]
     public class FeedLoaderController : ControllerBase
     {
         private readonly IFeedLoader _feedLoader;
@@ -17,7 +17,7 @@ namespace FeedLoader
             _feedLoader = feedLoader;
         }
 
-        [HttpGet]
+        [HttpPut]
         public IEnumerable<FeedItem> Load([FromBody] FeedRequest request)
         {
             return _feedLoader.Load(request);
