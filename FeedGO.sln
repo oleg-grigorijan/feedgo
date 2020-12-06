@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedLoader", "FeedLoader\Fe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedMailer", "FeedMailer\FeedMailer.csproj", "{11F18CE0-CDA4-4758-B84B-2F342E73574A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedControl", "FeedControl\FeedControl.csproj", "{448FDBBC-34A0-4092-9C88-D2AE86DB61CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{11F18CE0-CDA4-4758-B84B-2F342E73574A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11F18CE0-CDA4-4758-B84B-2F342E73574A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11F18CE0-CDA4-4758-B84B-2F342E73574A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{448FDBBC-34A0-4092-9C88-D2AE86DB61CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{448FDBBC-34A0-4092-9C88-D2AE86DB61CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{448FDBBC-34A0-4092-9C88-D2AE86DB61CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{448FDBBC-34A0-4092-9C88-D2AE86DB61CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
