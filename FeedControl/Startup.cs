@@ -1,5 +1,6 @@
 using FeedControl.Integration.FeedLoader;
 using FeedControl.Integration.FeedMailer;
+using FeedControl.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,8 @@ namespace FeedControl
 
             services.Configure<FeedMailerOptions>(Configuration.GetSection("Service:FeedMailer"));
             services.AddSingleton<IFeedMailerClient, FeedMailerClient>();
+
+            services.AddSingleton<IFeedService, FeedService>();
 
             services.AddControllersWithViews();
         }

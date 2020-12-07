@@ -1,8 +1,61 @@
-﻿@{
+﻿@model FeedControl.Controllers.FeedRequestForm
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+
+            <div class="card p-3">
+                @using (Html.BeginForm("", "", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Urls, "Источники", new {@class = "control-label"})
+                        @Html.TextAreaFor(m => m.Urls, new {@class = "form-control"})
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ContentKeyWords, "Ключевые слова", new {@class = "control-label"})
+                        @Html.TextAreaFor(m => m.ContentKeyWords, new {@class = "form-control"})
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Categories, "Категории", new {@class = "control-label"})
+                        @Html.TextAreaFor(m => m.Categories, new {@class = "form-control"})
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Emails, "Email адреса", new {@class = "control-label"})
+                        @Html.TextAreaFor(m => m.Emails, new {@class = "form-control"})
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="GO"/>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="list-group">
+                @foreach (FeedItem feedItem in ViewBag.FeedItems)
+                {
+                    <div class="list-group-item">
+                        <a href="@feedItem.Link">
+                            <h5 class="mb-1">@Html.Raw(feedItem.Title)</h5>
+                        </a>
+                        <small class="mb-1">@feedItem.PublishedDate.DateTime</small>
+                        <div>
+                            @foreach (string category in feedItem.Categories)
+                            {
+                                <span class="badge badge-dark mb-3">@category</span>
+                            }
+                        </div>
+                        <div>
+                            @Html.Raw(feedItem.Description)
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>

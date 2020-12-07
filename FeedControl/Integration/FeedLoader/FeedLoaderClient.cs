@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
@@ -33,8 +32,6 @@ namespace FeedControl.Integration.FeedLoader
             {
                 BaseAddress = new Uri(_options.Api)
             };
-            _client.DefaultRequestHeaders.Accept.Clear();
-            _client.DefaultRequestHeaders.Accept.Add(MediaTypeWithQualityHeaderValue.Parse("application/json"));
         }
 
         public async Task<IEnumerable<FeedItemDto>> LoadAsync(FeedRequestDto request)
